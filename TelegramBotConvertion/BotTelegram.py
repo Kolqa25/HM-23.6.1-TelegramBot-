@@ -33,7 +33,7 @@ def convert(message: telebot.types.Message):
             raise ConvertionException('Недопустимое количество параметров.')
 
         quote, base, amount = values
-        total_base = CurrencyConverter.get_pice(quote.casefold(), base.casefold(), amount)
+        total_base = CurrencyConverter.get_price(quote.casefold(), base.casefold(), amount)
     except ConvertionException as e:
         bot.reply_to(message, f'Ошибка пользователя\n{e}')
     except Exception as e:
